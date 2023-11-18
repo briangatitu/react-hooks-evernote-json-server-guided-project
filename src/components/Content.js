@@ -1,20 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import NoteEditor from "./NoteEditor";
 import NoteViewer from "./NoteViewer";
 import Instructions from "./Instructions";
 
-/*
-  Advice: If you cannot figure out how to get this component to work,
-          move the div and getContent up into NoteContainer and
-          try to get it to work in the parent first.
-          Then complete the rest of your app before attempting to
-          refactor to get this Content component to work.
-*/
 function Content() {
+  // State to track the mode (viewing, editing, etc.)
+  const [mode, setMode] = useState("view"); // Initial mode is set to "view"
+
   const getContent = () => {
-    if (false) {
+    // Conditionally render content based on the mode state
+    if (mode === "edit") {
       return <NoteEditor />;
-    } else if (false) {
+    } else if (mode === "view") {
       return <NoteViewer />;
     } else {
       return <Instructions />;
